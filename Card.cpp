@@ -57,6 +57,10 @@ const char* Card::sizetoString(int size) const {
 
 }
 
+bool Card::operator>(const Card& other) const{
+	return this->size > other.size;
+}
+
 std::ostream& operator<<(std::ostream& os, const Card& C) {
     os << C.color << " of " << C.sizeString;
     return os;

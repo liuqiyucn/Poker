@@ -28,11 +28,28 @@ public:
 		inGame = true;
 		rank = 0; // high card
 	}
-	Card getcard1(){
+	Card getcard1() const{
 		return hand[0];
 	}
-	Card getcard2(){
+	Card getcard2() const{
 		return hand[1];
+	}
+	bool isFold() const{
+		return !inGame;
+	}
+	bool isPlaying() const{
+		return onTable;
+	}
+	int getRank() const{
+		return rank;
+	}
+	Card getLargeCard() const{
+		if (getcard1() > getcard2()){
+			return getcard1();
+		}
+		else {
+			return getcard2();
+		}
 	}
 	bool operator>(const Player& other) const;
 	friend std::ostream& operator<<(std::ostream& os, const Player& p);
