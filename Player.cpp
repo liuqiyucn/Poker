@@ -7,7 +7,7 @@ bool Player::operator>(const Player& other) const{
 }
 
 std::ostream& operator<<(std::ostream& os, const Player& p) {
-    os << p.name << " has " << p.card1 << " and " << p.card2; 
+    os << p.name << " has " << p.hand[0] << " and " << p.hand[1]; 
     return os;
 }
 
