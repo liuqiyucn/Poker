@@ -2,6 +2,10 @@
 #include "Player.h"
 #include <iostream>
 
+bool Player::operator==(const Player& other) const {
+	if ()
+}
+
 bool Player::operator>(const Player& other) const{
 	if (this->isFold() && other.isFold()){
 		return false;
@@ -25,5 +29,14 @@ std::ostream& operator<<(std::ostream& os, const Player& p) {
     return os;
 }
 
+// return the larger card
+Card Player::getLargeCard() const{
+	if (getcard1() > getcard2()) {
+		return getcard1();
+	}
+	else {
+		return getcard2();
+	}
+}
 
 

@@ -20,11 +20,11 @@ public:
 		this->sizeString = sizetoString(size);
 	}
 
-	const char* getColor() {
+	const char* getColor() const{
 		return color;
 	}
 
-	int getSize() {
+	int getSize() const {
 		return size;
 	}
 	bool operator>(const Card& other) const;

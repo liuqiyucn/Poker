@@ -43,15 +43,9 @@ public:
 	int getRank() const{
 		return rank;
 	}
-	Card getLargeCard() const{
-		if (getcard1() > getcard2()){
-			return getcard1();
-		}
-		else {
-			return getcard2();
-		}
-	}
+	Card getLargeCard() const;
 	bool operator>(const Player& other) const;
+	bool operator==(const Player& other) const;
 	friend std::ostream& operator<<(std::ostream& os, const Player& p);
 };
 
