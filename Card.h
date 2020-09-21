@@ -28,6 +28,7 @@ public:
 		return size;
 	}
 	bool operator>(const Card& other) const;
+	bool operator==(const Card& other) const;
 	const char* decodeColor(int hash) const;
 	int decodeSize(int hash) const;
 	const char* sizetoString(int size) const;

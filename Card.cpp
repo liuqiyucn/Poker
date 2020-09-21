@@ -2,23 +2,31 @@
 
 
 const char* Card::decodeColor(int hash) const {
-    if (hash >= 1 && hash <= 13) {
+    if (hash >= 0 && hash <= 12) {
         return "Diamond";
     }
-    else if (hash >= 14 && hash <= 26) {
+    else if (hash >= 13 && hash <= 25) {
         return "Club";
     }
-    else if (hash >= 27 && hash <= 39) {
+    else if (hash >= 26 && hash <= 38) {
         return "Heart";
     }
-    else {
+    else if (hash >= 39 && hash <= 51) {
         return "Spade";
     }
+	else{
+		std::cerr << "The hash number entered is out of range" << std::endl;
+		return NULL;
+	}
 
 }
 
 // decode the size and set the appropriate sizetoString value
 int Card::decodeSize(int hash) const {
+	if (hash > 51){
+		std::cerr << "The hash number entered is out of range" << std::endl;
+		return 0;
+	}
     return hash % 13;
 }
 
@@ -55,6 +63,12 @@ const char* Card::sizetoString(int size) const {
         return "Ace";
     }
 
+}
+
+// check if the size of the two cards is the same
+// DOES NOT CHECK FOR COLOR ! 
+bool Card::operator==(const Card& other) const{
+	return this->size == other.size;
 }
 
 bool Card::operator>(const Card& other) const{

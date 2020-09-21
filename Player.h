@@ -44,6 +44,7 @@ public:
 		return rank;
 	}
 	Card getLargeCard() const;
+	Card getSmallCard() const;
 	bool operator>(const Player& other) const;
 	bool operator==(const Player& other) const;
 	friend std::ostream& operator<<(std::ostream& os, const Player& p);

@@ -3,7 +3,15 @@
 #include <iostream>
 
 bool Player::operator==(const Player& other) const {
-	if ()
+	Card p1h1 = this->getLargeCard();
+	Card p2h1 = other.getLargeCard();
+	bool h1Compare = p1h1 == p2h1;
+
+	Card p1h2 = this->getSmallCard();
+	Card p2h2 = other.getSmallCard();
+	bool h2Compare = p1h2 == p2h2;
+	
+	return (h1Compare && h2Compare);
 }
 
 bool Player::operator>(const Player& other) const{
@@ -36,6 +44,15 @@ Card Player::getLargeCard() const{
 	}
 	else {
 		return getcard2();
+	}
+}
+
+Card Player::getSmallCard() const{
+	if (getcard1() > getcard2()) {
+		return getcard2();
+	}
+	else {
+		return getcard1(); 
 	}
 }
 

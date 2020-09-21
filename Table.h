@@ -1,16 +1,25 @@
 #pragma once
 #include "Player.h"
+#include "Dealer.h"
 #include <vector>
 
 class Table
 {
 private:
-    Player* playerList;
-    std::vector<int> cardDeck;
+    std::vector<Player> playerList;
+    std::vector<Card> cardDeck;
     int tableSize;
 public:
     Table(int size) {
-        playerList = (Player *) malloc(sizeof(Player) * size);
-        tableSize = size;
+		tableSize = size;
     }
+	void flop(){
+
+	}
+	void turn(){
+
+	}
+	void river(){
+
+	}
 };
