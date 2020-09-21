@@ -8,4 +8,5 @@ Driver: Card.o Player.o Table.o Main.o
 
 clean:
 	rm -f *.o
+	rm -f *.swp
 	rm -f Driver
