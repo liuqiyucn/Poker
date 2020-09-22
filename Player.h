@@ -1,6 +1,9 @@
 #pragma once
 #include "Card.h"
 #include <vector>
+#include <string>
+
+using std::string;
 
 class Player
 {
@@ -12,7 +15,7 @@ private:
 	int rank; // default rank is 0, high card 
 	bool inGame; // true for in game players, false for folding players
 	bool onTable; // remove player if onTable is false
-	const char* name;
+	string name;
 public:
 	Player() {
 		std::cerr << "Default player constructor is called..." << std::endl;

@@ -1,4 +1,3 @@
-#pragma once
 #include <iostream>
 #include "Table.h"
 #include "Player.h"

@@ -29,7 +29,7 @@ public:
 		// create dealer and deals card
 		cardDeck = dealer.dealCards(tableSize);
 
-		// construc the players
+		// construc the players and add them to PlayerList
 		int chip;
 		char name[32];
 		int hash1;
@@ -46,9 +46,6 @@ public:
 			playerList.push_back(Player(hash1, hash2, chip, name));
 		}
 
-		for (int i = 0; i < tableSize; i++) {
-			cout << playerList[i] << endl;
-		}
 	}
 	void flop();
 	void turn();

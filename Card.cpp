@@ -1,7 +1,7 @@
 #include "Card.h"
 
 
-const char* Card::decodeColor(int hash) const {
+string Card::decodeColor(int hash) const {
     if (hash >= 0 && hash <= 12) {
         return "Diamond";
     }
@@ -30,7 +30,7 @@ int Card::decodeSize(int hash) const {
     return hash % 13;
 }
 
-const char* Card::sizetoString(int size) const {
+string Card::sizetoString(int size) const {
     switch (size)
     {
     default:

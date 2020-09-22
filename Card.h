@@ -1,12 +1,15 @@
 #pragma once
 #include <iostream>
+#include <string>
+
+using std::string;
 
 class Card
 {
 private:
-	const char* color;
+	string color;
 	int size;
-	const char* sizeString;
+	string sizeString;
 
 public:
 	Card() { 
@@ -20,7 +23,7 @@ public:
 		this->sizeString = sizetoString(size);
 	}
 
-	const char* getColor() const{
+	string getColor() const{
 		return color;
 	}
 
@@ -29,8 +32,8 @@ public:
 	}
 	bool operator>(const Card& other) const;
 	bool operator==(const Card& other) const;
-	const char* decodeColor(int hash) const;
+	string decodeColor(int hash) const;
 	int decodeSize(int hash) const;
-	const char* sizetoString(int size) const;
+	string sizetoString(int size) const;
 	friend std::ostream& operator<<(std::ostream& os, const Card& C);
 };
