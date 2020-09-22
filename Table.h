@@ -8,6 +8,7 @@ using std::cin;
 using std::vector;
 using std::endl;
 
+
 class Table
 {
 private:
@@ -44,11 +45,15 @@ public:
 			cardDeck.pop_back();
 			hash2 = cardDeck.back();
 			cardDeck.pop_back();
-			Player(hash1, hash2, chip, name);
-			// playerList.push_back(Player(hash1, hash2, chip, name));
+			playerList.push_back(Player(hash1, hash2, chip, name));
 		}
 
-
+		assignBlind();
+		/*
+		for (int i = 0; i < tableSize; i++) {
+			cerr << "PlayerList at index " << i << " is " << playerList[i] << endl;
+			cerr << "active at index " << i << " is " << activeList[i] << endl;
+		}*/
 	}
 
 	// main sequences
@@ -56,9 +61,11 @@ public:
 	void flop();
 	void turn();
 	void river();
+	void finish();
 
 	// helpers
 	void resizeTable();
 	void resizeBlind();
 	void assignBlind();
 };
+
