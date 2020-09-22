@@ -2,13 +2,17 @@
 #include <ctime>
 #include <cstdlib>
 #include <vector>
-#define SIZE_OF_DECK 54
+#include <iostream>
+#define SIZE_OF_DECK 52
+
+using std::cerr;
 
 class Dealer{
 private:
 	std::vector<int> deck;
 public:
 	Dealer(){
+		cerr << "Constructing dealer" << std::endl;
 		shuffle();
 	}
 	// ===================================
@@ -16,4 +20,7 @@ public:
 	// ===================================
 	std::vector<int> dealCards(int tableSize);
 	void shuffle();
+	std::vector<int> getDeck() {
+		return deck;
+	}
 };

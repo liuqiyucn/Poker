@@ -26,7 +26,7 @@ public:
 		this->name = name;
 		onTable = true;
 		inGame = true;
-		rank = 0; // high card
+		rank = 0; // high card   
 	}
 	Card getcard1() const{
 		return hand[0];

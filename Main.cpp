@@ -6,4 +6,5 @@
 
 int main()
 {
+	Table T =  Table();
 }
