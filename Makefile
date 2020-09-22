@@ -1,7 +1,7 @@
 CC=g++
 CFLAGS=-I.
 
-Driver: Card.o Player.o Table.o Main.o Dealer.o
+Driver: clean Card.o Player.o Table.o Main.o Dealer.o
 	$(CC) -o Driver Card.o Player.o Table.o Dealer.o Main.o 
 
 .PHONY: clean

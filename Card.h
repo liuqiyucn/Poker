@@ -12,8 +12,14 @@ private:
 	string sizeString;
 
 public:
+	// default
 	Card() { 
 		std::cerr << "Default card constructor is called..." << std::endl;
+	}
+
+	// copy constructor
+	Card(const Card& c){
+		// std::cerr << "Copy card constructor is called..." << std::endl;
 	}
 
 	// hash initializer

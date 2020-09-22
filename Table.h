@@ -11,7 +11,8 @@ using std::endl;
 class Table
 {
 private:
-    vector<Player> playerList;
+    vector<Player> playerList; // total player on the table
+	vector<Player> activeList;
     vector<int> cardDeck;
     int tableSize;
 	int blindSize;
@@ -43,13 +44,21 @@ public:
 			cardDeck.pop_back();
 			hash2 = cardDeck.back();
 			cardDeck.pop_back();
-			playerList.push_back(Player(hash1, hash2, chip, name));
+			Player(hash1, hash2, chip, name);
+			// playerList.push_back(Player(hash1, hash2, chip, name));
 		}
 
+
 	}
+
+	// main sequences
+	void pre();
 	void flop();
 	void turn();
 	void river();
+
+	// helpers
 	void resizeTable();
 	void resizeBlind();
+	void assignBlind();
 };

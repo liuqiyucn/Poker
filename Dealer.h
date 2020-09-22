@@ -13,14 +13,21 @@ private:
 public:
 	Dealer(){
 		cerr << "Constructing dealer" << std::endl;
+		cerr << "Feeding srand" << std::endl;
+		std::srand(std::time(0));
 		shuffle();
 	}
 	// ===================================
 	// vector return?
 	// ===================================
-	std::vector<int> dealCards(int tableSize);
-	void shuffle();
-	std::vector<int> getDeck() {
+
+	
+	std::vector<int> getDeck() const{
 		return deck;
 	}
+
+	// declarations
+	std::vector<int> dealCards(int tableSize);
+	void shuffle();
+	int getButtom(int tableSize);
 };

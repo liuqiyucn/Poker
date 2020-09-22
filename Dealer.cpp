@@ -1,7 +1,7 @@
 #include "Dealer.h"
 
 std::vector<int> Dealer::dealCards(int tableSize){
-	std::srand(std::time(0));
+	// std::srand(std::time(0));
 	std::vector<int> result;
 	int random;
 	int deckSize = SIZE_OF_DECK;
@@ -24,3 +24,9 @@ void Dealer::shuffle(){
 	}
 }
 
+int Dealer::getButtom(int tableSize){
+	// std::srand(std::time(0));
+	int random;
+	random = std::rand() % tableSize;;
+	return random;
+}
